@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mem_total=$(free -h --si | awk 'FNR==2 {print $2}')
+mem_used=$(free -h --si | awk 'FNR==2 {print $3}')
+
+echo "$LABEL $mem_used of $mem_total"
+

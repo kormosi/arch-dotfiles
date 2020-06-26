@@ -1,0 +1,13 @@
+#!/bin/sh
+
+url="wttr.in/bratislava"
+
+sleep 30
+verbal=$(curl -s $url | awk 'FNR==3 {print $4 " " $5 ","}')
+
+# First get the degrees, then substitute dots for hyphen, then strip the output of color codes.
+temperature=$(curl -s $url | awk 'FNR==4 {print $5}'| sed 's/\.\./-/g' | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
+
+echo "$verbal $temperature °C"
+
+

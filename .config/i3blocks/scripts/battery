@@ -1,0 +1,7 @@
+#!/bin/sh
+
+percentage=$(acpi | awk '{print $4}' | sed 's/,//g')
+
+echo "$LABEL $percentage"
+
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Adjust backlight upon scrolling.
+case $BLOCK_BUTTON in
+  4) light -A 10;;
+  5) light -U 10;;
+esac
+

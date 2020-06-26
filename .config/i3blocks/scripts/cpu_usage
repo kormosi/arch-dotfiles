@@ -1,0 +1,5 @@
+#!/bin/sh
+
+idle=$(mpstat | tail -1 | awk '{print $13}')
+usage=$(awk "BEGIN {print 100-$idle; exit}")
+echo "$LABEL $usage%"
