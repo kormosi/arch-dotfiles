@@ -1,27 +1,30 @@
 SCRIPT_DIR=/home/patres/.config/i3blocks/scripts/
 separator_block_width=10
 
+[docker]
+command=$SCRIPT_DIR/docker
+LABEL=Docker
+interval=10
+separator=false
+
+[update]
+command=$SCRIPT_DIR/update
+interval=30
+markup=pango
+LABEL=Updates:
+separator=false
+
 [weather]
 command=$SCRIPT_DIR/weather
 #LABEL=BAT
 interval=1800
+separator=false
 
 [battery]
 command=$SCRIPT_DIR/battery
 LABEL=BAT
 interval=10
-
-[arch-update]
-command=$SCRIPT_DIR/update
-interval=30
-markup=pango
-LABEL=Updates:
-
-[docker]
-command=$SCRIPT_DIR/docker
-LABEL=Docker
-color=#0db7ed
-interval=10
+separator=false
 
 [cpu_usage]
 command=$SCRIPT_DIR/cpu_usage
@@ -31,17 +34,20 @@ LABEL=CPU
 T_WARN=50
 T_CRIT=80
 #DECIMALS=2
+separator=false
 
 [memory]
 command=$SCRIPT_DIR/memory
 LABEL=RAM
 interval=10
+separator=false
 
 [time]
 command=$SCRIPT_DIR/time
 interval=1
-
-[light]
-command=$SCRIPT_DIR/light
-full_text=盛
 separator=false
+
+#[light]
+#command=$SCRIPT_DIR/light
+#full_text=盛
+#separator=false

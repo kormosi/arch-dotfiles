@@ -1,4 +1,6 @@
 #!/bin/sh
 
 updates=$(checkupdates | wc -l)
-echo "$LABEL $updates"
+if (( $updates > 0 )); then
+    echo "$LABEL $updates"
+fi

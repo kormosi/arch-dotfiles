@@ -225,6 +225,7 @@ set_from_resource $font-color i3wm.color7 #ffffff
 
 bar {
 
+  #status_command i3blocks
   status_command i3blocks
   font pango:JetBrains Mono Regular Nerd Font Complete Mono 11
 

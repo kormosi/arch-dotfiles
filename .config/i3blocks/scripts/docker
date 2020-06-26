@@ -3,6 +3,6 @@
 # Number of docker containers running
 count=$(docker ps -q | wc -l | sed -r 's/^0$//g')
 if (( $count > 0 )); then
-    echo "$LABEL ($count)"
+    echo "$LABEL: $count"
 fi
 
