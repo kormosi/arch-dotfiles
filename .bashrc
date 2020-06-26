@@ -5,17 +5,10 @@
 #If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Start i3 automatically
-#if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-#  exec startx 
-#fi
-
 # If running from tty1 start Sway
 if [ "$(tty)" = "/dev/tty1" ]; then
    exec startx 
-#  exec sway
 fi
-
 
 # No need to "cd" to change to directory
 shopt -s autocd
@@ -28,15 +21,29 @@ set -o vi
 
 export PS1="\u@\h \w\\$ \[$(tput sgr0)\]"
 
-# Shortcuts
+#############
+# Shortcuts #
+#############
 alias i3b="cd /home/patres/.config/i3blocks"
 alias vfz="pyenv activate vodafone; cd /home/patres/vfz/custom-vfz-scripts"
 
-#################################
+###########
+# Aliases #
+###########
 
-# Aliases
+# Misc
 alias so="source ~/.bashrc"
 alias hdd="sudo mount /dev/sdb1 /mnt/hdd"
+alias histg="history | grep"
+
+# Navigation/directory aliases
+alias ..="cd .."
+alias mkdir="mkdir -pv"
+
+# List aliases
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto --group-directories-first'
+alias ll="ls -lhA"
 
 # Grub aliases
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -45,11 +52,6 @@ alias grubconf="sudo vim /etc/default/grub"
 # Power aliases
 alias sdn="shutdown now"
 alias rbt="reboot"
-
-# List aliases
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls --color=auto --group-directories-first'
-alias ll="ls -lhA"
 
 # Utils aliases
 alias a="pulsemixer"
@@ -61,8 +63,6 @@ alias r="ranger"
 alias v="vim"
 alias vi="vim"
 alias sv="sudo vim"
-alias untar="tar -xfv"
-alias rec="record"
 alias bg="wal -i /home/patres/wallpers"
 alias ptags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")"
 alias randr="bash /home/patres/.screenlayout/default.sh"
@@ -87,6 +87,7 @@ alias cfk="vim ~/.config/kitty/kitty.conf"
 alias cfp="vim ~/.config/polybar/config"
 
 # Git aliases
+alias g="git"
 alias gc="git clone"
 alias gs="git status"
 alias gd="git diff"
@@ -100,9 +101,9 @@ alias gpom="git push origin master"
 # VPN alias
 alias vpn="sudo openvpn ~/Downloads/pkormosi.ovpn"
 
-
-# PyCharm JAVA variable
-export _JAVA_AWT_WM_NONREPARENTING=1
+#############
+# Variables #
+#############
 
 export PATH="/home/patres/programs/dart-sass:$PATH"
 export PATH="/home/patres/.local/bin:$PATH"
@@ -115,4 +116,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
-
