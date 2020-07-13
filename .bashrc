@@ -48,7 +48,7 @@ alias ll="ls -lhA"
 
 # Grub aliases
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias grubconf="sudo vim /etc/default/grub"
+alias cfg="sudo vim /etc/default/grub"
 
 # Power aliases
 alias sdn="shutdown now"
@@ -85,7 +85,7 @@ alias cfv="vim ~/.vimrc"
 alias cfi="vim ~/.config/i3/config"
 alias cfs="vim ~/.config/sway/config"
 alias cfk="vim ~/.config/kitty/kitty.conf"
-alias cfp="vim ~/.config/polybar/config"
+alias cfp="vim ~/.config/picom/picom.conf"
 
 # Git aliases
 alias g="git"
@@ -110,6 +110,9 @@ export PATH="/home/patres/programs/dart-sass:$PATH"
 export PATH="/home/patres/.local/bin:$PATH"
 export PATH="/home/patres/.cargo/bin:$PATH"
 
+# Direnv hook
+eval "$(direnv hook bash)"
+
 # Pyenv PATHS
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -118,5 +121,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
-# Direnv hook
-eval "$(direnv hook bash)"

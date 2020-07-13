@@ -1,7 +1,6 @@
 mpv
 ffmpeg
 python
-pywal
 gvim
 kitty
 firefox
@@ -10,7 +9,6 @@ wget
 git
 alsa-utils
 openssh
-light
 redshift
 maim
 ctags
@@ -26,4 +24,25 @@ pulsemixer
 xorg-server
 xorg-xinit
 i3-gaps
+i3lock
 i3blocks
+ranger
+python-pywal
+picom
+neofetch
+adobe-source-han-sans-otc-fonts
+adobe-source-han-serif-otc-fonts
+python-pip
+arandr
+arc-gtk-theme
+man
+xf86-video-intel
+
+content as /etc/X11/xorg.conf.d/20-intel.conf :
+      Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "DRI" "2"             # DRI3 is now default
+        #Option      "AccelMethod"  "sna" # default
+        #Option      "AccelMethod"  "uxa" # fallback
+      EndSection
