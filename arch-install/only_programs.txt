@@ -23,10 +23,7 @@ pacman-contrib
 acpi
 w3m
 pulsemixer
-
-najst nazvy balickov:
-xserver
-xinit
-i3gaps
-i3status
+xorg-server
+xorg-xinit
+i3-gaps
 i3blocks
