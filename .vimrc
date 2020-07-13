@@ -61,24 +61,13 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Reformat current buffer using Black.
-nmap <F9> :exec '!black %'<cr>
+nmap <F11> :exec '!black %'<cr>
 
 " code folding options
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2 
-
-" Syntastic settings
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_check_on_w = 0
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -95,3 +84,17 @@ set wildmode=list:longest,full
 map <Leader>c V "+y
 vnoremap <Leader>c "+y
 map <Leader>v "+p
+
+" Jedi settings
+"let g:jedi#show_call_signatures = 0
+
+function! Debug()
+    " ~/code/python_debug.txt 
+    r~/code/python_debug.txt 
+endfunction
+
+nmap <Leader>x :call Debug()<CR>
+
+" Look for a tags file in the directory of the current file, in the current directory 
+" and up until $HOME, stopping on the first hit.
+set tags=./tags,tags;$HOME

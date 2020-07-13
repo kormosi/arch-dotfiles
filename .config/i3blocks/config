@@ -14,11 +14,10 @@ markup=pango
 LABEL=Updates:
 separator=false
 
-[weather]
-command=$SCRIPT_DIR/weather
-#LABEL=BAT
-interval=1800
-separator=false
+#[weather]
+#command=$SCRIPT_DIR/weather
+#interval=1800
+#separator=false
 
 [battery]
 command=$SCRIPT_DIR/battery

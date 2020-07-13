@@ -51,7 +51,7 @@ bindsym $mod+d exec dmenu_run -i -nb "$grey" -nf "$primary" -sb "$bg" -sf "$fg"
 # Set gaps and border
 gaps inner 2 
 gaps outer 2
-default_border pixel  
+default_border pixel
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -247,8 +247,8 @@ bindsym $mod+r mode "resize"
 #exec --no-startup-id ~/.screenlayout/default.sh
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec light -A 3
-bindsym XF86MonBrightnessDown exec light -U 3
+bindsym XF86MonBrightnessUp exec light -A 7
+bindsym XF86MonBrightnessDown exec light -U 7
 
 # Autostart redshift
 exec --no-startup-id redshift -P -O 5000
