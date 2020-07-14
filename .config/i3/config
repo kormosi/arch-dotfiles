@@ -246,8 +246,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Redshift Control
-bindsym $mod+XF86MonBrightnessUp exec redshift -P -O 9000
-bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4000 
+bindsym $mod+XF86MonBrightnessUp exec redshift -P -O 5500
+bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4500 
 
 # Autostart redshift
 exec --no-startup-id redshift -P -O 5000

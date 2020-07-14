@@ -45,12 +45,15 @@ install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-git pull do ~/.vim/bundle
+git clone do ~/.vim/bundle
+(napr.: git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim)
+
 https://github.com/preservim/nerdtree
 https://github.com/Xuyuanp/nerdtree-git-plugin
 https://github.com/tpope/vim-surround
 https://github.com/majutsushi/tagbar
 https://github.com/tpope/vim-fugitive
+https://github.com/davidhalter/jedi-vim
 
 pull dotfiles
 run wal -i on random image

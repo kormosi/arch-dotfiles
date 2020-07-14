@@ -25,7 +25,7 @@ export PS1="\u@\h \w\\$ \[$(tput sgr0)\]"
 # Shortcuts #
 #############
 alias i3b="cd /home/patres/.config/i3blocks"
-alias vfz="pyenv activate vodafone; cd /home/patres/vfz/custom-vfz-scripts"
+alias vfz="pyenv activate vodafone; cd ~/custom-vfz-scripts"
 alias n="vim ~/notes/notes.txt"
 
 ###########
@@ -100,7 +100,7 @@ alias gca="git commit --amend"
 alias gpom="git push origin master"
 
 # VPN alias
-alias vpn="sudo openvpn ~/Downloads/pkormosi.ovpn"
+alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
 
 #############
 # Variables #
