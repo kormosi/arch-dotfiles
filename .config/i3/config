@@ -46,7 +46,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # Dynamically set dmenu's colors:
-bindsym $mod+d exec --no-startup-id dmenu_run -i -nb "$grey" -nf "$primary" -sb "$bg" -sf "$fg"
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn "JetBrainsMono:normal:pixelsize=16"
 
 # Set gaps and border
 gaps inner 2 

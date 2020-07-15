@@ -9,7 +9,7 @@ separator=false
 
 [update]
 command=$SCRIPT_DIR/update
-interval=30
+interval=86400
 markup=pango
 LABEL=Updates:
 separator=false
@@ -38,7 +38,7 @@ separator=false
 [memory]
 command=$SCRIPT_DIR/memory
 LABEL=RAM
-interval=10
+interval=5
 separator=false
 
 [time]
