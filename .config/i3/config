@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -15,6 +14,7 @@
 # Start picom
 exec --no-startup-id picom
 
+# Set mod to Windows button
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -56,7 +56,6 @@ default_border pixel
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -233,6 +232,10 @@ bindsym $mod+r mode "resize"
 
 # Autostart arandr for screen layout
 #exec --no-startup-id ~/.screenlayout/default.sh
+
+# Bindings for quick acces of commonly used text files
+bindsym $mod+t exec kitty vim ~/notes/todo.txt
+bindsym $mod+n exec kitty vim ~/notes/notes.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
