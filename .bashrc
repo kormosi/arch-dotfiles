@@ -27,6 +27,7 @@ export PS1="\u@\h \w\\$ \[$(tput sgr0)\]"
 alias i3b="cd /home/patres/.config/i3blocks"
 alias vfz="pyenv activate vodafone; cd ~/custom-vfz-scripts"
 alias n="vim ~/notes/notes.txt"
+alias todo="vim ~/notes/todo.txt"
 
 ###########
 # Aliases #

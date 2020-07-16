@@ -40,6 +40,9 @@ set incsearch
 " Always show at least n lines above/below the cursor.
 set scrolloff=10
 
+" Ignore case when searching.
+:set ignorecase
+
 " draws a colored column on 79th line 
 " set colorcolumn=79
 
