@@ -67,6 +67,9 @@ alias bg="wal -i /home/patres/wallpers"
 alias ptags="ctags -R --languages=python ."
 alias randr="bash /home/patres/.screenlayout/default.sh"
 
+# Systemd aliases
+alias systemctl="sudo systemctl"
+
 # Pacman aliases
 alias p="sudo pacman"
 alias install="sudo pacman -S"

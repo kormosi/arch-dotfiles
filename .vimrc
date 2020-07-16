@@ -34,6 +34,12 @@ set shiftwidth=4
 " show the matching part of the pair for [] {} and ()
 set showmatch
 
+" Start searching before pressing enter.
+set incsearch
+
+" Always show at least n lines above/below the cursor.
+set scrolloff=10
+
 " draws a colored column on 79th line 
 " set colorcolumn=79
 
@@ -89,7 +95,6 @@ map <Leader>v "+p
 "let g:jedi#show_call_signatures = 0
 
 function! Debug()
-    " ~/code/python_debug.txt 
     r~/code/python_debug.txt 
 endfunction
 

@@ -7,6 +7,12 @@ LABEL=Docker
 interval=10
 separator=false
 
+[battery2]
+command=$SCRIPT_DIR/battery2
+markup=pango
+interval=5
+separator=false
+
 [update]
 command=$SCRIPT_DIR/update
 interval=86400
@@ -19,11 +25,11 @@ separator=false
 #interval=1800
 #separator=false
 
-[battery]
-command=$SCRIPT_DIR/battery
-LABEL=BAT
-interval=10
-separator=false
+#[battery]
+#command=$SCRIPT_DIR/battery
+#LABEL=BAT
+#interval=10
+#separator=false
 
 [cpu_usage]
 command=$SCRIPT_DIR/cpu_usage
@@ -50,3 +56,4 @@ separator=false
 #command=$SCRIPT_DIR/light
 #full_text=盛
 #separator=false
+

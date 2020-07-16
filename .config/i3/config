@@ -42,7 +42,6 @@ client.focused_inactive $fg     $fg     $primary  $bg       $fg
 client.unfocused        $bg     $fg     $primary  $fg       $fg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
-
 client.background       $bg
 
 # Dynamically set dmenu's colors:
