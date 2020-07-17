@@ -15,7 +15,7 @@ separator=false
 
 [update]
 command=$SCRIPT_DIR/update
-interval=86400
+interval=30
 markup=pango
 LABEL=Updates:
 separator=false

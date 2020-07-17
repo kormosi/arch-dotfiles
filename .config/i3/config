@@ -236,6 +236,7 @@ bindsym $mod+r mode "resize"
 # Bindings for quick acces of commonly used text files
 bindsym $mod+t exec kitty vim ~/notes/todo.txt
 bindsym $mod+n exec kitty vim ~/notes/notes.txt
+bindsym $mod+g exec kitty vim ~/notes/budget.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10

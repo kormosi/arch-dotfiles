@@ -37,3 +37,4 @@ arandr
 arc-gtk-theme
 man
 xf86-video-intel
+unzip

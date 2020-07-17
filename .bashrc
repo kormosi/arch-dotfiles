@@ -73,6 +73,7 @@ alias systemctl="sudo systemctl"
 
 # Pacman aliases
 alias p="sudo pacman"
+alias i="sudo pacman -S"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rcns"
 alias update="sudo pacman -Syu"
