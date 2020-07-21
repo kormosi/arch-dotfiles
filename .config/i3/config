@@ -252,6 +252,13 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym $mod+XF86MonBrightnessUp exec redshift -P -O 5500
 bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4500 
 
+# Screenshot
+bindsym Print exec maim ~/screenshots/$(date '+%Y-%m-%d-%T')-screenshot.png
+bindsym $mod+p exec maim -s -u | xclip -selection clipboard -t image/png -i
+
+# Other bindings
+bindsym XF86Calculator exec kitty calc
+
 # Autostart redshift
 exec --no-startup-id redshift -P -O 5000
 
@@ -261,6 +268,3 @@ exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 # Autostart nm-applet
 exec --no-startup-id nm-applet
 
-# Screenshot
-bindsym Print exec maim ~/screenshots/$(date '+%Y-%m-%d-%T')-screenshot.png
-bindsym $mod+p exec maim -s -u | xclip -selection clipboard -t image/png -i

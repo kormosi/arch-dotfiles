@@ -37,6 +37,7 @@ alias todo="vim ~/notes/todo.txt"
 alias so="source ~/.bashrc"
 alias hdd="sudo mount /dev/sdb1 /mnt/hdd"
 alias histg="history | grep"
+alias rgrep="grep -r"
 
 # Navigation/directory aliases
 alias ..="cd .."

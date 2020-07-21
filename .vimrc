@@ -106,3 +106,9 @@ nmap <Leader>x :call Debug()<CR>
 " Look for a tags file in the directory of the current file, in the current directory 
 " and up until $HOME, stopping on the first hit.
 set tags=./tags,tags;$HOME
+
+" YCM settings
+" don't show preview
+" set completeopt-=preview
+" show preview as popup instead of buffer
+set completeopt+=popup
