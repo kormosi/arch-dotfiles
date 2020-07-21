@@ -19,15 +19,18 @@ set -o vi
 # Setting for not to have to type "cd" to cd into a directory.
 #shopt -s autocd
 
+
 export PS1="\u@\h \w\\$ \[$(tput sgr0)\]"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 #############
 # Shortcuts #
 #############
 alias i3b="cd /home/patres/.config/i3blocks"
 alias vfz="pyenv activate vodafone; cd ~/custom-vfz-scripts"
-alias n="vim ~/notes/notes.txt"
-alias todo="vim ~/notes/todo.txt"
+alias n="$EDITOR ~/notes/notes.txt"
+alias todo="$EDITOR ~/notes/todo.txt"
 
 ###########
 # Aliases #
@@ -42,6 +45,7 @@ alias rgrep="grep -r"
 # Navigation/directory aliases
 alias ..="cd .."
 alias mkdir="mkdir -pv"
+alias fv="find -type f | fzf | xargs -r $EDITOR"
 
 # List aliases
 alias ls='ls --color=auto --group-directories-first'
@@ -50,7 +54,7 @@ alias ll="ls -lhA"
 
 # Grub aliases
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias cfg="sudo vim /etc/default/grub"
+alias cfg="sudo $EDITOR /etc/default/grub"
 
 # Power aliases
 alias sdn="shutdown now"
@@ -61,9 +65,9 @@ alias a="pulsemixer"
 alias f="neofetch"
 alias py="python3"
 alias r="ranger"
-alias v="vim"
+alias v="nvim"
 alias vi="vim"
-alias sv="sudo vim"
+alias sv="sudo $EDITOR"
 alias bg="wal -i /home/patres/wallpers"
 #alias ptags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")"
 alias ptags="ctags -R --languages=python ."
@@ -86,12 +90,13 @@ alias rm="rm -i"
 alias cp="cp -i"
 
 # Config aliases
-alias cfb="vim ~/.bashrc"
-alias cfv="vim ~/.vimrc"
-alias cfi="vim ~/.config/i3/config"
-alias cfs="vim ~/.config/sway/config"
-alias cfk="vim ~/.config/kitty/kitty.conf"
-alias cfp="vim ~/.config/picom/picom.conf"
+alias cfb="$EDITOR ~/.bashrc"
+alias cfv="$EDITOR ~/.vimrc"
+alias cfi="$EDITOR ~/.config/i3/config"
+alias cfs="$EDITOR ~/.config/sway/config"
+alias cfk="$EDITOR ~/.config/kitty/kitty.conf"
+alias cfp="$EDITOR ~/.config/picom/picom.conf"
+alias cfn="$EDITOR ~/.config/nvim/init.vim"
 
 # Git aliases
 alias g="git"
