@@ -11,6 +11,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'pechorin/any-jump.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
