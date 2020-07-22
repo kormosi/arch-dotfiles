@@ -9,9 +9,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'davidhalter/jedi-vim'
 Plug 'pechorin/any-jump.vim'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'dense-analysis/ale'
 
 " Colorschemes
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -92,6 +93,9 @@ nmap <F8> :TagbarToggle<CR>
 
 " Reformat current buffer using Black.
 nmap <F11> :exec '!black %'<cr>
+
+" Don't use swap files
+set noswapfile
 
 " code folding options
 set foldmethod=indent
