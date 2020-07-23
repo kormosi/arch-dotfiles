@@ -23,6 +23,8 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 " <TAB>: completion 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " FZF config
 nmap <C-f> :Files<CR>
@@ -149,9 +151,10 @@ set tags=./tags,tags;$HOME
 " set completeopt-=preview
 " show preview as popup instead of buffer
 "set completeopt+=popup
-"
+
 "" Restore last cursor position and marks on open
 au BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
       \ |   exe "normal! g`\""
       \ | endif
+
