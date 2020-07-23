@@ -12,6 +12,8 @@ Plug 'pechorin/any-jump.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'machakann/vim-highlightedyank'
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
@@ -19,6 +21,8 @@ call plug#end()
 
 " Deoplete config
 let g:deoplete#enable_at_startup = 1
+" <TAB>: completion 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " FZF config
 nmap <C-f> :Files<CR>
@@ -95,6 +99,10 @@ nmap <F8> :TagbarToggle<CR>
 " Reformat current buffer using Black.
 nmap <F11> :exec '!black %'<cr>
 
+"" allows navigating soft wraps with j and k but 10j still uses lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 " Don't use swap files
 set noswapfile
 
@@ -141,4 +149,9 @@ set tags=./tags,tags;$HOME
 " set completeopt-=preview
 " show preview as popup instead of buffer
 "set completeopt+=popup
-
+"
+"" Restore last cursor position and marks on open
+au BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
