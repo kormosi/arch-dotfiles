@@ -234,9 +234,9 @@ bindsym $mod+r mode "resize"
 #exec --no-startup-id ~/.screenlayout/default.sh
 
 # Bindings for quick acces of commonly used text files
-bindsym $mod+t exec kitty vim ~/notes/todo.txt
-bindsym $mod+n exec kitty vim ~/notes/notes.txt
-bindsym $mod+g exec kitty vim ~/notes/budget.txt
+bindsym $mod+t exec kitty nvim ~/notes/todo.txt
+bindsym $mod+n exec kitty nvim ~/notes/notes.txt
+bindsym $mod+g exec kitty nvim ~/notes/budget.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
