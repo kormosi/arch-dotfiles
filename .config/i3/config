@@ -44,7 +44,7 @@ client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
-# Dynamically set dmenu's colors:
+# Dmenu program launcher
 bindsym $mod+d exec --no-startup-id dmenu_run -i -fn "JetBrainsMono:normal:pixelsize=16"
 
 # Set gaps and border
@@ -232,6 +232,9 @@ bindsym $mod+r mode "resize"
 
 # Autostart arandr for screen layout
 #exec --no-startup-id ~/.screenlayout/default.sh
+
+# Suspend to RAM binding
+bindsym $mod+F1 exec systemctl suspend
 
 # Bindings for quick acces of commonly used text files
 bindsym $mod+t exec kitty nvim ~/notes/todo.txt
