@@ -27,7 +27,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " FZF config
-nmap <C-f> :Files<CR>
+nnoremap <C-f> :Files<CR>
+nnoremap <C-g> :Rg<CR>
 
 " colorscheme
 colorscheme gruvbox
