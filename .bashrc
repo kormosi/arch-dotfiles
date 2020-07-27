@@ -74,6 +74,11 @@ alias bg="wal -i /home/patres/wallpers"
 alias ptags="ctags -R --languages=python ."
 alias randr="bash /home/patres/.screenlayout/default.sh"
 
+# Colored output settings
+alias ip="ip -color=auto"
+alias grep="grep --color=auto"
+
+
 # Systemd aliases
 alias systemctl="sudo systemctl"
 
