@@ -106,7 +106,7 @@ alias cfn="$EDITOR ~/.config/nvim/init.vim"
 
 # Git aliases
 alias g="git"
-alias gc="git commit"
+alias gc="git checkout"
 alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
