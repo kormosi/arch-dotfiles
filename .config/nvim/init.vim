@@ -14,21 +14,11 @@ Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
-
+Plug 'airblade/vim-rooter'
+Plug 'wellle/context.vim'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 call plug#end()
-
-" Deoplete config
-let g:deoplete#enable_at_startup = 1
-" <TAB>: completion 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" FZF config
-nnoremap <C-f> :Files<CR>
-nnoremap <C-g> :Rg<CR>
 
 " colorscheme
 colorscheme gruvbox
@@ -70,17 +60,18 @@ set showmatch
 set incsearch
 set nohlsearch
 
-" Always show at least n lines above/below the cursor.
-set scrolloff=10
-
 " Ignore case when searching.
 :set ignorecase
 
-" draws a colored column on 79th line 
-" set colorcolumn=79
+" Always show at least n lines above/below the cursor.
+set scrolloff=10
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
+
+"" allows navigating soft wraps with j and k but 10j still uses lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " map window switching to vim keys
 nnoremap <C-J> <C-W>j
@@ -94,17 +85,8 @@ imap <C-w> <C-o><C-w>
 nnoremap <buffer> <F5> :exec '!clear;python' shellescape(@%, 1)<cr>
 "imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 
-" toggle NerdTree                                                                       
-nmap <C-n> :NERDTreeToggle<CR>                                                            
-" toggle Tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " Reformat current buffer using Black.
 nmap <F11> :exec '!black %'<cr>
-
-"" allows navigating soft wraps with j and k but 10j still uses lines
-nnoremap <expr> j v:count ? 'j' : 'gj'
-nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Don't use swap files
 set noswapfile
@@ -114,9 +96,6 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2 
-
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Don't display docstring window popup during completion
 autocmd FileType python setlocal completeopt-=preview
@@ -131,27 +110,15 @@ map <Leader>c V "+y
 vnoremap <Leader>c "+y
 map <Leader>v "+p
 
-" Jedi settings
-" disable autocompletion, cause we use deoplete for completion
-"let g:jedi#completions_enabled = 0
-" open the go-to function in split, not another buffer
-let g:jedi#use_splits_not_buffers = "right"
-
+" Insert debugging python snippet
 function! Debug()
     r~/code/python_debug.txt 
 endfunction
-
 nmap <Leader>x :call Debug()<CR>
 
 " Look for a tags file in the directory of the current file, in the current directory 
 " and up until $HOME, stopping on the first hit.
 set tags=./tags,tags;$HOME
-
-" YCM settings
-" don't show preview
-" set completeopt-=preview
-" show preview as popup instead of buffer
-"set completeopt+=popup
 
 "" Restore last cursor position and marks on open
 au BufReadPost *
@@ -159,3 +126,37 @@ au BufReadPost *
       \ |   exe "normal! g`\""
       \ | endif
 
+
+""""""""""""""""""" 
+" Plugins settings:  
+
+" Jedi settings
+" open the go-to function in split, not another buffer
+let g:jedi#use_splits_not_buffers = "right"
+
+" Deoplete config
+let g:deoplete#enable_at_startup = 1
+" <TAB>: completion 
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" FZF settings
+nnoremap <C-f> :Files<CR>
+nnoremap <C-g> :Rg<CR>
+
+" NerdTree settings
+" toggle NerdTree                                                                       
+nmap <C-n> :NERDTreeToggle<CR>                                                            
+" toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Show git blame
+nmap <Leader>b :G blame<CR>
+
+" Remap NERDComment to toggle comments.
+nnoremap <Leader><space> :call NERDComment(0,"toggle")<CR>
+nnoremap <Leader><space> :call NERDComment(0,"toggle")<CR>
