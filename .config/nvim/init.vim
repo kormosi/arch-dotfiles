@@ -106,9 +106,9 @@ autocmd FileType python setlocal completeopt-=preview
 set wildmode=list:longest,full
 
 " Remap copying to general + register.
-map <Leader>c V "+y
+noremap <Leader>c V "+y
 vnoremap <Leader>c "+y
-map <Leader>v "+p
+noremap <Leader>v "+p
 
 " Insert debugging python snippet
 function! Debug()
@@ -158,5 +158,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nmap <Leader>b :G blame<CR>
 
 " Remap NERDComment to toggle comments.
-nnoremap <Leader><space> :call NERDComment(0,"toggle")<CR>
 nnoremap <Leader><space> :call NERDComment(0,"toggle")<CR>
