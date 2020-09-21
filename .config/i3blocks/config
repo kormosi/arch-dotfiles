@@ -13,12 +13,12 @@ markup=pango
 interval=5
 separator=false
 
-[update]
-command=$SCRIPT_DIR/update
-interval=30
-markup=pango
-LABEL=Updates:
-separator=false
+#[update]
+#command=$SCRIPT_DIR/update
+#interval=30
+#markup=pango
+#LABEL=Updates:
+#separator=false
 
 #[weather]
 #command=$SCRIPT_DIR/weather
