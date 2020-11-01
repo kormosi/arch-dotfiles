@@ -239,7 +239,6 @@ bindsym $mod+F1 exec systemctl suspend
 # Bindings for quick acces of commonly used text files
 bindsym $mod+t exec kitty nvim ~/notes/todo.txt
 bindsym $mod+n exec kitty nvim ~/notes/notes.txt
-bindsym $mod+g exec kitty nvim ~/notes/budget.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -261,6 +260,9 @@ bindsym $mod+p exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 # Other bindings
 bindsym XF86Calculator exec kitty calc
+
+# keyboard layout binding
+bindsym $mod+g exec switch_layout
 
 # Autostart redshift
 exec --no-startup-id redshift -P -O 5000
