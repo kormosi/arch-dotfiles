@@ -19,10 +19,13 @@ set -o vi
 # Setting for not to have to type "cd" to cd into a directory.
 #shopt -s autocd
 
-
+#############
+# Variables #
+#############
 export PS1="\u@\h \w\\$ \[$(tput sgr0)\]"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export HISTSIZE=10000
 
 #############
 # Shortcuts #
@@ -119,9 +122,9 @@ alias gpom="git push origin master"
 # VPN alias
 alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
 
-#############
-# Variables #
-#############
+#################
+# ENV Variables #
+#################
 
 export PATH="/home/patres/programs/dart-sass:$PATH"
 export PATH="/home/patres/.local/bin:$PATH"
