@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-rooter'
 Plug 'wellle/context.vim'
+Plug 'jiangmiao/auto-pairs'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -64,7 +65,7 @@ set nohlsearch
 :set ignorecase
 
 " Always show at least n lines above/below the cursor.
-set scrolloff=10
+set scrolloff=7
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -73,16 +74,31 @@ let python_highlight_all = 1
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
-" map window switching to vim keys
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
+" map window switching to vim keys, if there's no key in the desired
+" direction, create it
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+
+nnoremap <silent> <C-h> :call WinMove('h')<CR>
+nnoremap <silent> <C-j> :call WinMove('j')<CR>
+nnoremap <silent> <C-k> :call WinMove('k')<CR>
+nnoremap <silent> <C-l> :call WinMove('l')<CR>
 
 " enable above windows switching in insert mode too       
 imap <C-w> <C-o><C-w>                                                                     
+
 " execute current buffer in python by pressing F5   
-nnoremap <buffer> <F5> :exec '!clear;python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 "imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 
 " Reformat current buffer using Black.
@@ -98,12 +114,12 @@ set nofoldenable
 set foldlevel=2 
 
 " Don't display docstring window popup during completion
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
 
 " have command-line completion <Tab> (for filenames, help topics, option names)
 " first list the available options and complete the longest common part, then
 " have further <Tab>s cycle through the possibilities:
-set wildmode=list:longest,full
+"set wildmode=list:longest,full
 
 " Remap copying to general + register.
 noremap <Leader>c V "+y

@@ -227,7 +227,6 @@ bar {
   }
 }
 
-
 bindsym $mod+r mode "resize"
 
 # Autostart arandr for screen layout

@@ -67,12 +67,13 @@ alias rbt="reboot"
 alias a="pulsemixer"
 alias f="neofetch"
 alias py="python3"
+alias o="octave"
 alias r="ranger"
 alias v="nvim"
 alias vi="vim"
 alias vim="nvim"
 alias sv="sudo $EDITOR"
-alias bg="wal -i /home/patres/wallpers"
+#alias bg="wal -i /home/patres/wallpers"
 #alias ptags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")"
 alias ptags="ctags -R --languages=python ."
 alias randr="bash /home/patres/.screenlayout/default.sh"
@@ -80,7 +81,6 @@ alias randr="bash /home/patres/.screenlayout/default.sh"
 # Colored output settings
 alias ip="ip -color=auto"
 alias grep="grep --color=auto"
-
 
 # Systemd aliases
 alias systemctl="sudo systemctl"
@@ -90,8 +90,8 @@ alias p="sudo pacman"
 alias i="sudo pacman -S"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rcns"
-alias update="sudo pacman -Syu"
-alias ud="sudo pacman -Syu"
+alias update="yay -Syu"
+alias ud="yay -Syu"
 
 # Remove and copy aliases
 alias rm-lock="sudo rm /var/lib/pacman/db.lck"
@@ -121,6 +121,9 @@ alias gpom="git push origin master"
 
 # VPN alias
 alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
+
+# Misc aliases
+alias ml="cd ~/code/octave"
 
 #################
 # ENV Variables #
