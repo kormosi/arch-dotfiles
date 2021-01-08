@@ -42,6 +42,7 @@ alias todo="$EDITOR ~/notes/todo.txt"
 # Misc
 alias so="source ~/.bashrc"
 alias hdd="sudo mount /dev/sdb1 /mnt/hdd"
+alias hg="history | grep"
 alias histg="history | grep"
 alias rgrep="grep -r"
 
