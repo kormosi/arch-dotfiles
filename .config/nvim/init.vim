@@ -17,6 +17,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-rooter'
 Plug 'wellle/context.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tmhedberg/SimpylFold'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -122,6 +123,8 @@ set foldlevel=2
 "set wildmode=list:longest,full
 
 " Remap copying to general + register.
+noremap <Leader>y V "+y
+vnoremap <Leader>y "+y
 noremap <Leader>c V "+y
 vnoremap <Leader>c "+y
 noremap <Leader>v "+p

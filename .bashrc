@@ -31,7 +31,7 @@ export HISTSIZE=10000
 # Shortcuts #
 #############
 alias i3b="cd /home/patres/.config/i3blocks"
-alias vfz="pyenv activate vodafone; cd ~/custom-vfz-scripts"
+alias vfz="cd ~/custom-vfz-scripts"
 alias n="$EDITOR ~/notes/notes.txt"
 alias todo="$EDITOR ~/notes/todo.txt"
 
