@@ -17,9 +17,11 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-rooter'
 Plug 'wellle/context.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tmhedberg/SimpylFold'
+Plug 'APZelos/blamer.nvim'
 " Colorschemes
 Plug 'morhetz/gruvbox'
+
+
 call plug#end()
 
 " colorscheme
@@ -110,17 +112,19 @@ set noswapfile
 
 " code folding options
 set foldmethod=indent
-set foldnestmax=10
 set nofoldenable
-set foldlevel=2 
+set foldlevel=2
+set foldnestmax=2
+nnoremap <space> za
+vnoremap <space> zf
 
 " Don't display docstring window popup during completion
-"autocmd FileType python setlocal completeopt-=preview
+autocmd FileType python setlocal completeopt-=preview
 
 " have command-line completion <Tab> (for filenames, help topics, option names)
 " first list the available options and complete the longest common part, then
 " have further <Tab>s cycle through the possibilities:
-"set wildmode=list:longest,full
+set wildmode=list:longest,full
 
 " Remap copying to general + register.
 noremap <Leader>y V "+y
@@ -167,8 +171,6 @@ nnoremap <C-g> :Rg<CR>
 " NerdTree settings
 " toggle NerdTree                                                                       
 nmap <C-n> :NERDTreeToggle<CR>                                                            
-" toggle Tagbar
-nmap <F8> :TagbarToggle<CR>
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -178,3 +180,6 @@ nmap <Leader>b :G blame<CR>
 
 " Remap NERDComment to toggle comments.
 nnoremap <Leader><space> :call NERDComment(0,"toggle")<CR>
+
+let g:blamer_enabled = 0
+let g:blamer_delay = 500

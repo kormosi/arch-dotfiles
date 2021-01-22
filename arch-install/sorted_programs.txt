@@ -1,5 +1,6 @@
 acpi
 alsa-utils
+bashmount
 ctags
 dmenu
 ffmpeg
@@ -26,3 +27,4 @@ sysstat
 w3m
 wget
 xclip
+yay

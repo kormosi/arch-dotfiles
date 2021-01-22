@@ -17,7 +17,7 @@ shopt -s autocd
 set -o vi
 
 # Setting for not to have to type "cd" to cd into a directory.
-#shopt -s autocd
+shopt -s autocd
 
 #############
 # Variables #
@@ -31,7 +31,8 @@ export HISTSIZE=10000
 # Shortcuts #
 #############
 alias i3b="cd /home/patres/.config/i3blocks"
-alias vfz="cd ~/custom-vfz-scripts"
+alias vfz="cd ~/code/custom-vfz-scripts"
+alias gamma="cd ~/code/custom-gamma-scripts"
 alias n="$EDITOR ~/notes/notes.txt"
 alias todo="$EDITOR ~/notes/todo.txt"
 
@@ -42,9 +43,11 @@ alias todo="$EDITOR ~/notes/todo.txt"
 # Misc
 alias so="source ~/.bashrc"
 alias hdd="sudo mount /dev/sdb1 /mnt/hdd"
+alias hist="history"
 alias hg="history | grep"
 alias histg="history | grep"
 alias rgrep="grep -r"
+alias bmount="bashmount"
 
 # Navigation/directory aliases
 alias ..="cd .."
@@ -73,7 +76,7 @@ alias r="ranger"
 alias v="nvim"
 alias vi="vim"
 alias vim="nvim"
-alias sv="sudo $EDITOR"
+alias sv="sudo nvim"
 #alias bg="wal -i /home/patres/wallpers"
 #alias ptags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")"
 alias ptags="ctags -R --languages=python ."
@@ -103,7 +106,6 @@ alias cp="cp -i"
 alias cfb="$EDITOR ~/.bashrc"
 alias cfv="$EDITOR ~/.vimrc"
 alias cfi="$EDITOR ~/.config/i3/config"
-alias cfs="$EDITOR ~/.config/sway/config"
 alias cfk="$EDITOR ~/.config/kitty/kitty.conf"
 alias cfp="$EDITOR ~/.config/picom/picom.conf"
 alias cfn="$EDITOR ~/.config/nvim/init.vim"
@@ -114,7 +116,9 @@ alias gc="git checkout"
 alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
+alias gpr="git pull -r"
 alias ga="git add"
+alias gau="git add -u"
 alias gaa="git add *"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
@@ -125,6 +129,7 @@ alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
 
 # Misc aliases
 alias ml="cd ~/code/octave"
+alias plex="firefox http://localhost:32400/web/"
 
 #################
 # ENV Variables #
@@ -144,4 +149,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
-

@@ -1,5 +1,5 @@
 # Restore wal theme
-#wal -i "$(< "${HOME}/.cache/wal/wal")"
+wal -i "$(< "${HOME}/.cache/wal/wal")"
 
 exec i3
 
