@@ -111,10 +111,9 @@ nmap <F11> :exec '!black %'<cr>
 set noswapfile
 
 " code folding options
-set foldmethod=indent
-set nofoldenable
 set foldlevel=2
-set foldnestmax=2
+set nofoldenable
+set foldmethod=indent
 nnoremap <space> za
 vnoremap <space> zf
 

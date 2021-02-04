@@ -47,7 +47,7 @@ alias hist="history"
 alias hg="history | grep"
 alias histg="history | grep"
 alias rgrep="grep -r"
-alias bmount="bashmount"
+alias bm="bashmount"
 
 # Navigation/directory aliases
 alias ..="cd .."
@@ -122,7 +122,7 @@ alias gau="git add -u"
 alias gaa="git add *"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
-alias gpom="git push origin master"
+alias gpom="git push origin main"
 
 # VPN alias
 alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"

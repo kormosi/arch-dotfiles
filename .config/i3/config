@@ -45,7 +45,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # Dmenu program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run -i -fn "JetBrainsMono:normal:pixelsize=16"
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn "JetBrainsMono Nerd Font Mono:normal:pixelsize=15"
 
 # Set gaps and border
 gaps inner 2 
@@ -233,7 +233,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+i exec i3lock -c 222222 -e 
 
 # Run Xautolock
-exec_always xautolock -time 3 -locker "i3lock -c 222222" -detectsleep
+exec_always xautolock -corners -000 -cornersize 30 -time 10 -locker "i3lock -c 222222" -detectsleep
 
 # Suspend to RAM binding
 bindsym $mod+Shift+i exec systemctl suspend
@@ -254,7 +254,7 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Redshift Control
 bindsym $mod+XF86MonBrightnessUp exec redshift -P -O 5500
-bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4500 
+bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4000 
 
 # Screenshot
 bindsym Print exec maim ~/screenshots/$(date '+%Y-%m-%d-%T')-screenshot.png
@@ -275,3 +275,6 @@ exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 
 # Autostart nm-applet
 exec --no-startup-id nm-applet
+
+# autostart dunst
+exec --no-startup-id dunst
