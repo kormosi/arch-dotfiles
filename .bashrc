@@ -33,6 +33,8 @@ export HISTSIZE=10000
 alias i3b="cd /home/patres/.config/i3blocks"
 alias vfz="cd ~/code/custom-vfz-scripts"
 alias gamma="cd ~/code/custom-gamma-scripts"
+alias cs="cd ~/code/c/cs50"
+alias c="cd ~/code/c"
 alias n="$EDITOR ~/notes/notes.txt"
 alias todo="$EDITOR ~/notes/todo.txt"
 

@@ -99,7 +99,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -239,8 +239,8 @@ exec_always xautolock -corners -000 -cornersize 30 -time 10 -locker "i3lock -c 2
 bindsym $mod+Shift+i exec systemctl suspend
 
 # Bindings for quick acces of commonly used text files
-bindsym $mod+t exec kitty nvim ~/notes/todo.txt
-bindsym $mod+n exec kitty nvim ~/notes/notes.txt
+bindsym $mod+t exec kitty nvim ~/docs/notes/todo.txt
+bindsym $mod+n exec kitty nvim ~/docs/notes/notes.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -262,6 +262,7 @@ bindsym $mod+p exec maim -s -u | xclip -selection clipboard -t image/png -i
 
 # Other bindings
 bindsym XF86Calculator exec kitty calc
+bindsym $mod+Shift+a exec kitty pulsemixer
 
 # keyboard layout binding
 bindsym $mod+g exec switch_layout
