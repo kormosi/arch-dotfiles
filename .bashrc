@@ -34,7 +34,7 @@ alias i3b="cd /home/patres/.config/i3blocks"
 alias vfz="cd ~/code/custom-vfz-scripts"
 alias gamma="cd ~/code/custom-gamma-scripts"
 alias cs="cd ~/code/c/cs50"
-alias c="cd ~/code/c"
+#alias c="cd ~/code/c"
 alias n="$EDITOR ~/notes/notes.txt"
 alias todo="$EDITOR ~/notes/todo.txt"
 
@@ -119,11 +119,16 @@ alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
 alias gpr="git pull -r"
+alias gl="git log"
+alias gll="git log --pretty=format:'%C(yellow)%h%Cred%d\ %Creset%s%Cblue\ [%cn]' --decorate --numstat"
+alias gls="git log --pretty=format:'%C(green)%h\ %C(yellow)[%ad]%Cred%d\ %Creset%s%Cblue\ [%cn]' --decorate --date=relative "
 alias ga="git add"
-alias gau="git add -u"
+alias grs="git restore --staged"
+alias gau="git add -u; git status"
 alias gaa="git add *"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
+alias gcs="git commit -s"
 alias gpom="git push origin main"
 
 # VPN alias
@@ -151,3 +156,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv virtualenv-init -)"
+
+# Autocomplete Git commands.
+source /usr/share/git/completion/git-completion.bash
