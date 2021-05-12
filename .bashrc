@@ -134,6 +134,12 @@ alias gpom="git push origin main"
 # VPN alias
 alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
 
+# Docker aliases
+alias d="docker"
+alias dc="docker container"
+alias di="docker image"
+alias dn="docker network"
+
 # Misc aliases
 alias ml="cd ~/code/octave"
 alias plex="firefox http://localhost:32400/web/"
