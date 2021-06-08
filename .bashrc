@@ -133,12 +133,16 @@ alias gpom="git push origin main"
 
 # VPN alias
 alias vpn="sudo openvpn ~/vpn/pkormosi.ovpn"
+alias labvpn="cd ~/vpn/clientVPN; sudo openvpn client.conf"
+alias gamvpn="sudo swanctl --initiate --child ikev1-psk-xauth --debug 1"
 
 # Docker aliases
 alias d="docker"
 alias dc="docker container"
 alias di="docker image"
 alias dn="docker network"
+alias ds="docker system"
+alias dv="docker volume"
 
 # Misc aliases
 alias ml="cd ~/code/octave"
@@ -151,6 +155,7 @@ alias plex="firefox http://localhost:32400/web/"
 export PATH="/home/patres/programs/dart-sass:$PATH"
 export PATH="/home/patres/.local/bin:$PATH"
 export PATH="/home/patres/.cargo/bin:$PATH"
+export PATH="/home/patres/.screenlayout/:$PATH"
 
 # Direnv hook
 eval "$(direnv hook bash)"

@@ -230,17 +230,17 @@ bar {
 bindsym $mod+r mode "resize"
 
 # Lock screen settings
-bindsym $mod+i exec i3lock -c 222222 -e 
+bindsym --release $mod+i exec slock
 
 # Run Xautolock
-exec_always xautolock -corners -000 -cornersize 30 -time 10 -locker "i3lock -c 222222" -detectsleep
+exec_always xautolock -corners -000 -cornersize 30 -time 1 -locker slock -detectsleep
 
 # Suspend to RAM binding
 bindsym $mod+Shift+i exec systemctl suspend
 
 # Bindings for quick acces of commonly used text files
-bindsym $mod+t exec kitty nvim ~/docs/notes/todo.txt
-bindsym $mod+n exec kitty nvim ~/docs/notes/notes.txt
+bindsym $mod+Shift+t exec kitty nvim ~/docs/notes/todo.txt
+bindsym $mod+Shift+n exec kitty nvim ~/docs/notes/notes.txt
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -256,7 +256,7 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym $mod+XF86MonBrightnessUp exec redshift -P -O 5500
 bindsym $mod+XF86MonBrightnessDown exec redshift -P -O 4000 
 
-# Screenshot
+# Screenshot control
 bindsym Print exec maim ~/screenshots/$(date '+%Y-%m-%d-%T')-screenshot.png
 bindsym $mod+p exec maim -s -u | xclip -selection clipboard -t image/png -i
 
@@ -272,10 +272,9 @@ exec --no-startup-id redshift -P -O 5000
 
 # Autostart workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
-#exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/spotify'
 
 # Autostart nm-applet
 exec --no-startup-id nm-applet
 
-# autostart dunst
+# Autostart dunst
 exec --no-startup-id dunst
