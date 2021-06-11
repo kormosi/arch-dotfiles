@@ -230,10 +230,10 @@ bar {
 bindsym $mod+r mode "resize"
 
 # Lock screen settings
-bindsym --release $mod+i exec slock
+bindsym $mod+i exec i3lock -c 222222
 
 # Run Xautolock
-exec_always xautolock -corners -000 -cornersize 30 -time 1 -locker slock -detectsleep
+exec_always xautolock -corners -000 -cornersize 30 -time 5 -locker "i3lock -c 22222" -detectsleep
 
 # Suspend to RAM binding
 bindsym $mod+Shift+i exec systemctl suspend

@@ -141,7 +141,7 @@ alias d="docker"
 alias dc="docker container"
 alias di="docker image"
 alias dn="docker network"
-alias ds="docker system"
+alias ds="docker service"
 alias dv="docker volume"
 
 # Misc aliases
