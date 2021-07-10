@@ -11,7 +11,11 @@ zstyle :compinstall filename '/home/patres/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
+
+# Start X
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
 
 # Prompt settings
 autoload -Uz promptinit
@@ -20,7 +24,12 @@ promptinit
 # My settings
 prompt fire
 
-ZSH_THEME="random"
+#ZSH_THEME="random"
+
+# Solve the problem where Zsh overwrites a line that didn't
+# finish with a newline with it's own prompt.
+# (Basically emulate Bash's default behaviour.)
+unsetopt PROMPT_SP PROMPT_CR
 
 #############
 # Variables #
@@ -94,8 +103,8 @@ alias systemctl="sudo systemctl"
 
 # Pacman aliases
 alias p="sudo pacman"
-alias i="sudo pacman -S"
-alias install="sudo pacman -S"
+alias i="yay -S"
+alias install="yay -S"
 alias remove="sudo pacman -Rcns"
 alias update="yay -Syu"
 alias ud="yay -Syu"
@@ -158,6 +167,7 @@ export PATH="/home/patres/.local/bin:$PATH"
 export PATH="/home/patres/.cargo/bin:$PATH"
 export PATH="/home/patres/.screenlayout/:$PATH"
 
-
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
+
+bindkey '^r' history-incremental-search-backward

@@ -43,6 +43,7 @@ alias todo="$EDITOR ~/notes/todo.txt"
 ###########
 
 # Misc
+alias cat="bat"
 alias so="source ~/.bashrc"
 alias hdd="sudo mount /dev/sdb1 /mnt/hdd"
 alias hist="history"
@@ -57,9 +58,11 @@ alias mkdir="mkdir -pv"
 alias fv="find -type f | fzf | xargs -r $EDITOR"
 
 # List aliases
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls --color=auto --group-directories-first'
-alias ll="ls -lhA"
+#alias ls='ls --color=auto --group-directories-first'
+#alias l='ls --color=auto --group-directories-first'
+#alias ll="ls -lhA"
+alias ls="exa --group-directories-first"
+alias ll="exa --long"
 
 # Grub aliases
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -170,3 +173,5 @@ eval "$(pyenv virtualenv-init -)"
 
 # Autocomplete Git commands.
 source /usr/share/git/completion/git-completion.bash
+
+source /home/patres/.config/broot/launcher/bash/br
